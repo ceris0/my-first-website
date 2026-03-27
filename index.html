@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cinnamoroll Eating Cinnamon Bun</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(#dff6ff, #ffffff);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }.scene {
+  text-align: center;
+}
+
+.cinnamoroll {
+  width: 200px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.bun {
+  width: 120px;
+  margin-top: 20px;
+  animation: eat 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes eat {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+
+.bite {
+  position: absolute;
+  top: 60%;
+  left: 55%;
+  font-size: 24px;
+  opacity: 0;
+  animation: biteAnim 2s infinite;
+}
+
+@keyframes biteAnim {
+  0% { opacity: 0; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-10px); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+  </style>
+</head>
+<body><div class="scene">
+  <img class="cinnamoroll" src="https://i.imgur.com/8QfQZ6M.png" alt="Cinnamoroll">
+  <div class="bite">nom nom 🍩</div>
+  <img class="bun" src="https://i.imgur.com/1bX5QH6.png" alt="Cinnamon Bun">
+</div></body>
+</html>
