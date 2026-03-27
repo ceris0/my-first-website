@@ -51,22 +51,10 @@
   z-index: 2;
 }
 
+/* Simple SVG-style Cinnamoroll */
 .cinnamoroll {
-  width: 200px;
+  width: 180px;
   animation: float 3s ease-in-out infinite;
-}
-
-.bun-container {
-  width: 120px;
-  height: 120px;
-  margin: 20px auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.bun {
-  width: 120px;
-  animation: eatAway 6s linear infinite;
 }
 
 @keyframes float {
@@ -74,7 +62,18 @@
   50% { transform: translateY(-15px); }
 }
 
-/* Bun disappearing animation */
+.bun-container {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.bun {
+  width: 120px;
+  animation: eatAway 6s linear infinite;
+}
+
 @keyframes eatAway {
   0% { clip-path: inset(0 0 0 0); }
   50% { clip-path: inset(0 50% 0 0); }
@@ -105,11 +104,25 @@
   </style>
 </head>
 <body><div class="sun"></div>
-<div class="waves"></div><div class="scene">
-  <!-- FIXED image links -->
-  <img class="cinnamoroll" src="https://upload.wikimedia.org/wikipedia/en/3/3e/Cinnamoroll.png" alt="Cinnamoroll">
-  <div class="bite">nom nom 🍩</div>  <div class="bun-container">
-    <img class="bun" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Cinnamon_roll.png" alt="Cinnamon Bun">
+<div class="waves"></div><div class="scene">  <!-- DRAWN CINNAMOROLL (no external images) -->  <svg class="cinnamoroll" viewBox="0 0 200 200">
+    <!-- ears -->
+    <ellipse cx="30" cy="80" rx="30" ry="60" fill="white"/>
+    <ellipse cx="170" cy="80" rx="30" ry="60" fill="white"/>
+    <!-- face -->
+    <circle cx="100" cy="100" r="60" fill="white" stroke="#ddd"/>
+    <!-- eyes -->
+    <circle cx="80" cy="95" r="5" fill="#333"/>
+    <circle cx="120" cy="95" r="5" fill="#333"/>
+    <!-- mouth -->
+    <ellipse cx="100" cy="115" rx="10" ry="6" fill="#333"/>
+    <!-- blush -->
+    <circle cx="70" cy="110" r="5" fill="#ffb6c1"/>
+    <circle cx="130" cy="110" r="5" fill="#ffb6c1"/>
+  </svg>  <div class="bite">nom nom 🍩</div>  <!-- DRAWN CINNAMON BUN -->  <div class="bun-container">
+    <svg class="bun" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="#d2a679"/>
+      <path d="M30 50 Q50 30 70 50 Q50 70 30 50" fill="none" stroke="#8b5a2b" stroke-width="5"/>
+    </svg>
   </div>  <div class="text">Cinnamoroll enjoying a snack at the beach 🏖️</div>
 </div></body>
 </html>
