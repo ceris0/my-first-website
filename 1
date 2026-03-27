@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cinnamoroll at the Beach</title>
+  <style>
+    * { box-sizing: border-box; }body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background: linear-gradient(#87ceeb 0%, #87ceeb 55%, #f4e1a1 55%, #f4e1a1 100%);
+}
+
+.sun {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  width: 80px;
+  height: 80px;
+  background: #ffd54d;
+  border-radius: 50%;
+  box-shadow: 0 0 40px #ffd54d;
+}
+
+.waves {
+  position: absolute;
+  bottom: 45%;
+  width: 200%;
+  height: 120px;
+  background: repeating-linear-gradient(
+    45deg,
+    #4fc3f7,
+    #4fc3f7 10px,
+    #29b6f6 10px,
+    #29b6f6 20px
+  );
+  animation: waveMove 6s linear infinite;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-200px); }
+}
+
+.scene {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cinnamoroll {
+  width: 200px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.bun-container {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.bun {
+  width: 120px;
+  animation: eatAway 6s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Bun disappearing animation */
+@keyframes eatAway {
+  0% { clip-path: inset(0 0 0 0); }
+  50% { clip-path: inset(0 50% 0 0); }
+  100% { clip-path: inset(0 100% 0 0); }
+}
+
+.bite {
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  font-size: 22px;
+  opacity: 0;
+  animation: biteAnim 2s infinite;
+}
+
+@keyframes biteAnim {
+  0% { opacity: 0; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-10px); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.text {
+  margin-top: 10px;
+  color: #555;
+  font-size: 18px;
+}
+
+  </style>
+</head>
+<body><div class="sun"></div>
+<div class="waves"></div><div class="scene">
+  <!-- FIXED image links -->
+  <img class="cinnamoroll" src="https://upload.wikimedia.org/wikipedia/en/3/3e/Cinnamoroll.png" alt="Cinnamoroll">
+  <div class="bite">nom nom 🍩</div>  <div class="bun-container">
+    <img class="bun" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Cinnamon_roll.png" alt="Cinnamon Bun">
+  </div>  <div class="text">Cinnamoroll enjoying a snack at the beach 🏖️</div>
+</div></body>
+</html>
